@@ -81,7 +81,7 @@ import java.util.Arrays;
 /////////////////////////////////////////////////////////////////////////     TABULAR SOLUTION
 
 
-public class NumberOfSubsets_DP17 {
+public class DP17_NumberOfSubsets {
 	public static void main(String args[]) {
 
 		int[] arr = { 1, 2, 2, 1};
