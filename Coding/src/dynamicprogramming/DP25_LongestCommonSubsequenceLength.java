@@ -2,6 +2,8 @@ package dynamicprogramming;
 
 import java.util.Arrays;
 
+//THIS PROBLEM  IS A BAAP PROBLEM, SOLVE THIS AND GET CAPABILITY OF SOLVING MORE 5+ PROBLEMS
+
 
 ///////////////////////////////////////////////////////////////////  RECURSIVE SOLUTION
 
