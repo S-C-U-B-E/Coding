@@ -77,7 +77,7 @@ import java.util.Arrays;
 
 /////////////////////////////////////////////////////////////////////  TABULAR SOLUTION
 
-public class DP37_StockBuySellWithNumberOfTransactionsLimitation {
+public class DP37_38_StockBuySellWithNumberOfTransactionsLimitation {
 	public static void main(String args[]) {
 		long[] prices = { 3, 3, 5, 0, 0, 3, 1, 4 };
 		int limit = 2;

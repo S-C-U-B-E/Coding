@@ -2,7 +2,7 @@ package dynamicprogramming;
 
 // Just copy pasted the buy & sell stock multiple time s allowed and deducted the fee at the sell phase 
 
-public class DP39_StockBuySellWithTransactionFee {
+public class DP40_StockBuySellWithTransactionFee {
 	public static void main(String args[]) {
 
 		int[] prices = {1,3,2,8,4,9};
