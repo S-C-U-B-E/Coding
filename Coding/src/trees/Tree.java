@@ -24,32 +24,47 @@ class Node {
 
 public class Tree {
 
-	public static Node root = null;
-	public static int[] tree = { 0, 1, 2, 3, 4, 5, 6 };
+	public Node root = null;
+	public int[] tree = { 0, 1, 2, 3, 4, 5, 6 };
 
+//Tree ->	
+	
+//	          1
+//       2         3
+//    4    5     6   7 
+//  8  9       11
+//10	         12
+	
 	Tree() {
-		root = new Node(0, null, null);
-		root.left = new Node(1, null, null);
-		root.right = new Node(2, null, null);
-		root.left.left = new Node(3, null, null);
-		root.left.right = new Node(4, null, null);
-		root.right.left = new Node(5, null, null);
-		root.right.right = new Node(6, null, null);
+		root = new Node(1, null, null);
+		root.left = new Node(2, null, null);
+		root.right = new Node(3, null, null);
+		root.left.left = new Node(4, null, null);
+		root.left.right = new Node(5, null, null);
+		root.right.left = new Node(6, null, null);
+		root.right.right = new Node(7, null, null);
+		
+		root.left.left.left = new Node(8, null, null);
+		root.left.left.right = new Node(9, null, null);
+		root.left.left.left.left = new Node(10, null, null);
+		
+		root.right.left.left = new Node(11, null, null);
+		root.right.left.left.right = new Node(12, null, null);
 	}
 
 	public Node getTree() {
 		return root;
 	}
 
-	public static int[] getTreeArray() {
+	public int[] getTreeArray() {
 		return tree;
 	}
 
-	public static void printTree() {
-		traverse(root);
+	public void printTree() {
+		treeTraversal(root);
 	}
 
-	private static void traverse(Node root) {
+	void treeTraversal(Node root) {
 
 		if (root == null)
 			return;
