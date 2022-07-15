@@ -9,33 +9,32 @@ public class LeftViewOfBinaryTree {
 		Tree tree = new Tree();
 		Node root = tree.getTree();
 
-		//BFS
-		Queue<Integer> leftViewqueue = new LinkedList<Integer>();
-		leftViewBFS(root, leftViewqueue);
-		while(!leftViewqueue.isEmpty())
-			System.out.print(leftViewqueue.poll() + " ");
-		System.out.println();
-
-		
-		//DFS
-		ArrayList<Integer> leftView = new ArrayList<>();
-		leftViewDFS(root, leftView);
+		// BFS
+		ArrayList<Integer> leftView = new ArrayList<Integer>();
+		leftViewBFS(root, leftView);
 		System.out.println(leftView);
+
+		// DFS
+//		ArrayList<Integer> leftView = new ArrayList<>();
+//		leftViewDFS(root, leftView);
+//		System.out.println(leftView);
 	}
 
-	private static void leftViewDFS(Node root, ArrayList<Integer> leftView) {
+//BELOW CODE IS WRONG	
 
-		if (root == null)
-			return;
+//	private static void leftViewDFS(Node root, ArrayList<Integer> leftView) {
+//
+//		if (root == null)
+//			return;
+//
+//		if (root.left != null)
+//			leftViewDFS(root.left, leftView);
+//
+//		leftView.add(0, root.val);
+//
+//	}
 
-		if (root.left != null)
-			leftViewDFS(root.left, leftView);
-
-		leftView.add(0, root.val);
-
-	}
-
-	private static void leftViewBFS(Node root, Queue<Integer> leftViewqueue) {
+	private static void leftViewBFS(Node root, ArrayList<Integer> leftView) {
 
 		Queue<Node> q = new LinkedList<Node>();
 		q.add(root);
@@ -44,10 +43,15 @@ public class LeftViewOfBinaryTree {
 			int n = q.size();
 			for (int i = 1; i <= n; i++) {
 				Node temp = q.poll();
-				if (temp != null) {
-					leftViewqueue.offer(temp.val);
+
+				if(i == 1)leftView.add(temp.val); 
+	//ADDING ONLY THE 1ST ELEMENT OF QUEUE WILL MAKE SURE THAT THE LEFTMOST NODE OF ANY LEVEL IS ADDED 
+				
+				if (temp.left != null)
 					q.add(temp.left);
-				}
+				if (temp.right != null)
+					q.add(temp.right);
+
 			}
 		}
 
