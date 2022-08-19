@@ -1,0 +1,65 @@
+int[] arr
+lo = 0
+hi = n - 1    
+
+MergeSort(arr , lo , hi){
+
+if(lo > hi)
+return;
+
+int mid = lo + (hi - lo)/2; 
+
+MergeSort(arr , lo , mid);
+
+MergeSort(arr , mid + 1 , hi);
+
+
+Merge(arr , lo , mid , hi);
+}
+
+Merge(arr , lo , mid , hi){
+
+int n1 = mid - lo + 1;
+
+int n2 = hi - mid;
+
+int[] aux1 = new int[n1]; //copy elements of arr[lo -> mid] to aux1
+int[] aux2 = new int[n2]; //copy elements of arr[mid+1 -> hi] to aux2
+
+int l1 = 0, l2 = 0;
+int ind = lo;
+
+while(l1 < n1 && l2 < n2){
+{
+	if(aux1[l1] < aux2[l2]){
+		arr[k] = aux1[l1];
+		l1++;
+	}else{
+		arr[k] = aux2[l2];
+		l2++;
+	}
+	
+	k++;
+}
+
+while(l1 < n1){
+	arr[k] = aux1[l1];
+	k++;
+	l1++;
+}
+
+while(l2 < n2){
+	arr[k] = aux2[l2];
+	k++;
+	l2++;
+}
+
+}
+
+
+
+
+
+
+
+
