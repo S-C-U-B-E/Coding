@@ -11,13 +11,13 @@ public class RightViewOfBinaryTree {
 
 		// BFS
 		ArrayList<Integer> rightView = new ArrayList<Integer>();
-		leftViewBFS(root, rightView);
+		rightViewBFS(root, rightView);
 		System.out.println(rightView);
 	}
 
 
 
-	private static void leftViewBFS(Node root, ArrayList<Integer> rightView) {
+	private static void rightViewBFS(Node root, ArrayList<Integer> rightView) {
 
 		Queue<Node> q = new LinkedList<Node>();
 		q.add(root);

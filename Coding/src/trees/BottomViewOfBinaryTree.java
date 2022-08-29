@@ -13,7 +13,7 @@ public class BottomViewOfBinaryTree {
 		HashMap<Integer, Integer> map = new HashMap<>();
 		HashMap<Integer, List<Integer>> nodesUnderAHeight = new HashMap<>();
 		int[] minMaxHeight = new int[2];
-		topView(root, map, 0, minMaxHeight, nodesUnderAHeight);
+		bottomView(root, map, 0, minMaxHeight, nodesUnderAHeight);
 
 		System.out.println("***********************************************");
 		for (int i = minMaxHeight[0]; i <= minMaxHeight[1]; i++) {
@@ -26,13 +26,14 @@ public class BottomViewOfBinaryTree {
 
 	}
 
-	private static void topView(Node root, HashMap<Integer, Integer> map, int height, int[] minMaxHeight,
+	private static void bottomView(Node root, HashMap<Integer, Integer> map, int height, int[] minMaxHeight,
 			HashMap<Integer, List<Integer>> nodesUnderAHeight) {
 
 		if (root == null)
 			return;
 
-		map.put(height, root.val);
+		map.put(height, root.val); 
+		
 		System.out.println(height+" "+root.val);
 		if (!nodesUnderAHeight.containsKey(height))
 			nodesUnderAHeight.put(height, new ArrayList<Integer>(root.val));
@@ -48,8 +49,8 @@ public class BottomViewOfBinaryTree {
 		if (height > minMaxHeight[1])
 			minMaxHeight[1] = height;
 
-		topView(root.left, map, height - 1, minMaxHeight , nodesUnderAHeight);
-		topView(root.right, map, height + 1, minMaxHeight , nodesUnderAHeight);
+		bottomView(root.left, map, height - 1, minMaxHeight , nodesUnderAHeight);
+		bottomView(root.right, map, height + 1, minMaxHeight , nodesUnderAHeight);
 
 	}
 }
